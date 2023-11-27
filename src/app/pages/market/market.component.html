@@ -1,0 +1,22 @@
+<div>
+    <div>
+        <h4 for="heading">Listed Brand Assets</h4>
+    </div>
+    <div class="grid">
+        <div class="col-3" *ngFor="let asset of assetsList">
+            <div class="card flex justify-content-center">
+                <p-card header="{{asset.brand}}" subheader="{{asset.slogan}}" [style]="{ width: '360px' }">
+                    <ng-template pTemplate="header">
+                        <img alt="Card" src="{{asset.image}}" />
+                    </ng-template>
+                    <p>
+                        {{asset.details}}
+                    </p>
+                    <ng-template pTemplate="footer">
+                        <p-button label="Get Asset" icon="pi pi-check" (click)="openAsset(asset)"></p-button>
+                    </ng-template>
+                </p-card>
+            </div>
+        </div>
+    </div>
+</div>

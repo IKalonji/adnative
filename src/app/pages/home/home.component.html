@@ -1,0 +1,49 @@
+<div class="grid grid-nogutter surface-section text-800">
+    <div class="col-12 md:col-6 p-6 text-center md:text-left flex align-items-center ">
+        <section>
+            <span class="block text-6xl font-bold mb-1">Web3 Game Assets for Developers</span>
+            <div class="text-5xl text-primary font-bold mb-3">for native ad revenue</div>
+            <p-divider layout="horizontal"></p-divider>
+            <p class="mt-0 mb-4 text-700 line-height-3">With adnative&trade;, Web3 Game Developers can turn static assets into adveretising revenue, all natively directly within your games.</p>
+            
+            <div class="grid border-noround-sm">
+                <div class="col text-center">
+                    <h4>For Developers</h4>
+                    <p class="mt-0 mb-4 text-700 line-height-3">
+                        Register your game, search for assets, mint and include in your game to start earning!
+                    </p>
+                    <button pButton pRipple label="Developer Asset Marketplace" type="button" class="mr-3 p-button-raised" (click)="selectNetwork('market')"></button>
+                </div>
+                <p-divider layout="vertical"></p-divider>
+                <div class="col text-center">
+                    <h4>For Brands and Advertisers</h4>
+                    <p class="mt-0 mb-4 text-700 line-height-3">
+                        Create or upload you branded assets for developers to use and get your brand out there!
+                    </p>
+                    <button pButton pRipple label="Branded Asset Listing" type="button" class="p-button-outlined" (click)="selectNetwork('brand')"></button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="col-12 md:col-6 overflow-hidden">
+        <img src="../../../assets/adnative_logo.png" alt="Image" class="md:ml-auto block md:h-full bg-black-alpha-90" style="clip-path: polygon(8% 0, 100% 0%, 100% 100%, 0 100%)">
+    </div>
+</div>
+<div class="card flex justify-content-center">
+    <p-toast></p-toast>
+    <p-confirmDialog #cd [style]="{ width: '30vw' }" [dismissableMask]="false">
+        <ng-template pTemplate="header">
+            <h3>Select Chain</h3>
+        </ng-template>
+        <ng-template pTemplate="icon">
+            <i class="pi pi-link"></i>
+        </ng-template>
+        <ng-template pTemplate="message">
+            <p>Select required chain</p>
+        </ng-template>
+        <ng-template pTemplate="footer">
+            <button type="button" pButton icon="" label="Klaytn" (click)="cd.accept()"></button>
+            <button type="button" pButton icon="" label="Lukso" (click)="cd.reject()"></button>
+        </ng-template>
+    </p-confirmDialog>
+</div>
